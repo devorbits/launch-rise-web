@@ -9,9 +9,11 @@ export async function joinWaitlist(email: string) {
     body: JSON.stringify({ email }),
   });
 
+  const data = await res.json();
+
   if (!res.ok) {
-    throw new Error("Failed to join waitlist");
+    throw new Error(data.error || "Request failed");
   }
 
-  return res.json();
+  return data;
 }
