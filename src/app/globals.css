@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Background */
+body {
+  background-color: #050505;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Grid */
+.grid-pattern {
+  background-image: linear-gradient(to right, #111 1px, transparent 1px),
+    linear-gradient(to bottom, #111 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* 🔥 FINAL GLASS FIX */
+.glass {
+  background: rgba(15, 15, 15, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  isolation: isolate;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Glow */
+.glow-border {
+  box-shadow: 0 0 20px rgba(134, 85, 246, 0.15);
+}
+
+/* Gradient */
+.hero-gradient {
+  background: linear-gradient(to bottom right, #fff 30%, #8655f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Torch */
+.torch-glow {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(134, 85, 246, 0.08),
+    transparent 70%
+  );
+}
