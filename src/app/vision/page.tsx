@@ -46,16 +46,6 @@ export default function VisionPage() {
       animate="show"
       className="min-h-screen bg-black text-white"
     >
-      {/* NAV */}
-      <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-10 py-8 mix-blend-difference">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-5 h-5 border border-white rounded-full flex items-center justify-center text-[10px]">
-            ‹
-          </div>
-          <span className="font-bold tracking-[0.2em] text-sm">RISE</span>
-        </Link>
-      </nav>
-
       {/* HERO */}
       <motion.section
         variants={fadeUp}
@@ -82,19 +72,14 @@ export default function VisionPage() {
 
       {/* IDENTITY CORE */}
       <section className="relative py-40 flex flex-col items-center justify-center overflow-hidden">
-        {/* atmosphere */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.18),transparent_60%)]" />
-
-        {/* glow */}
         <div className="absolute w-[700px] h-[700px] bg-purple-600/30 blur-[180px] rounded-full opacity-40" />
 
-        {/* rings */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-[600px] h-[600px] border border-purple-500/10 rounded-full animate-[spin_40s_linear_infinite]" />
           <div className="absolute w-[700px] h-[700px] border border-purple-500/5 rounded-full animate-[spin_60s_linear_infinite_reverse]" />
         </div>
 
-        {/* core */}
         <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-6">
           <div className="relative w-40 h-40 mb-12">
             <div className="absolute inset-0 bg-purple-600/40 blur-[120px] rounded-full" />
@@ -126,46 +111,31 @@ export default function VisionPage() {
           title="Identity Over Tasks"
           description="Checking off boxes is temporary. Identity is permanent."
         />
-
         <ImageBlock
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK1rA3PFyCXsyoqRHBVFyCieL9MdiJSc3jznGt_Rq7yir2muwXyuTSJRWipPtsa1xDMUxemjyMEg1sthrFDTXyN4ETK7BUCWR97Pzbra6U9t9fyMoskZhrGG_vLwUFbm9Ldq9jtZ1xoq8LyOVGGiJ33weMrZhWCwIaIEP6tI94R1NBigDS2f-ipTgAf3PxxOEtpDyPIdN4NiUfKVXj8Uh6orrxj_buuRPS5T_c2YQKGBgTHfjqhDhGEYWgS8zItxJtQY20TKEy7Mg"
           alt="mesh"
         />
-
         <ImageBlock
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUchQAd6xTsz9329MrAZKtO7JxjfvteXYQWDrvLTZNm6n50Gmz-FmZv2s-HMGpz0hhG2F3yKif5xlUGIMj3xJ4KhmYr4U3lcQI7padHk9-fyrEgyLjMySxqHr9Xp_1t2XXi48TdWdQhPH2osOpQKbU5qc-ARn4gedZGSBf58Jr4Agmjv5xzrCRSWsNJAiSLZxD83QPf1iWDFoMstgn7Yf0TaSqV0HNG6U8scRV4Z5iDXPz1KUYVgsSgnACdFUWezs_ZpvkaKwEVAE"
           alt="face"
         />
-
         <FeatureCard
           Icon={MapPin}
           title="AI as a Mentor"
           description="RISE learns your rhythms."
         />
-
         <FeatureCard
           Icon={Clock}
           title="90 Days to Mastery"
           description="Consistency compounds into mastery."
         />
-
         <ImageBlock
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmQ2-hzKWSAyOORFce1nqQ1L6tukI56jRQk5yc2ua0u6yih27zhUhJLnTQFvkS1pQy4CALxNWNZoHyrzFgK1Lar0feftLWq8lV4CmAQQXGHDDKIyQB2iT4X-ud0UPS0etRMxyxHDTxIR9FaxRnPacBLulKNJCCP4hQmpAOnCykenKpOcb09DsPwkXS1sSvrV75Bt7PA9lXOJ2qoO49ZY8ioGF1RTL1kuKL9Av09pUbvMMW8lyQTcH76ZChe5GxMt7rbWiPuefPM0U"
           alt="galaxy"
         />
       </motion.section>
 
-      {/* FOOTER */}
-      <footer className="relative z-10 py-20 border-t border-zinc-900 text-center">
-        <div className="flex justify-center gap-8 text-zinc-500">
-          <Twitter className="hover:text-purple-400 cursor-pointer" />
-          <Disc3 className="hover:text-purple-400 cursor-pointer" />
-          <Rss className="hover:text-purple-400 cursor-pointer" />
-        </div>
-        <p className="mt-10 text-xs text-zinc-600 uppercase tracking-widest">
-          © 2024 RISE LABS
-        </p>
-      </footer>
+     
     </motion.div>
   );
 }

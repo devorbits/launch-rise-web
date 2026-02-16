@@ -28,6 +28,7 @@ const PhaseSection = ({ phase }: { phase: FrameworkPhase }) => {
         phase.isReversed ? "md:flex-row-reverse" : "md:flex-row"
       } items-center gap-16 py-24`}
     >
+      
       {/* TEXT */}
       <motion.div
         initial={{ opacity: 0, x: phase.isReversed ? 40 : -40 }}
@@ -195,12 +196,7 @@ export default function FrameworkPage() {
         </button>
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-20 border-t border-zinc-900 text-center">
-        <p className="text-xs text-zinc-600 uppercase tracking-widest">
-          © 2024 RISE LABS
-        </p>
-      </footer>
+      
     </div>
   );
 }

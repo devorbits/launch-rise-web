@@ -6,6 +6,7 @@
 body {
   background-color: #050505;
   font-family: "Space Grotesk", sans-serif;
+  overflow-x: hidden;
 }
 
 /* Grid */
@@ -15,7 +16,7 @@ body {
   background-size: 40px 40px;
 }
 
-/* 🔥 FINAL GLASS FIX */
+/* 🔥 FINAL GLASS FIX (navbar etc.) */
 .glass {
   background: rgba(15, 15, 15, 0.65);
   backdrop-filter: blur(20px);
@@ -25,12 +26,58 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Glow */
-.glow-border {
-  box-shadow: 0 0 20px rgba(134, 85, 246, 0.15);
+/* ============================= */
+/* 🔥 STITCH CARD SYSTEM (FIXED) */
+/* ============================= */
+
+.glass-card {
+  background: rgba(15, 15, 15, 0.42);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Gradient */
+/* Card lighting layer */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(134, 85, 246, 0.15),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+/* Hover glow */
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+.glass-card:hover {
+  border-color: rgba(134, 85, 246, 0.6);
+  box-shadow: 0 0 60px rgba(134, 85, 246, 0.18);
+  transform: translateY(-6px);
+}
+
+/* Mint hover */
+.glass-card-mint:hover {
+  border-color: rgba(45, 226, 142, 0.6);
+  box-shadow: 0 0 60px rgba(45, 226, 142, 0.2);
+}
+
+/* Glow */
+.glow-border {
+  box-shadow: 0 0 25px rgba(134, 85, 246, 0.2);
+}
+
+/* Gradient text */
 .hero-gradient {
   background: linear-gradient(to bottom right, #fff 30%, #8655f6 100%);
   -webkit-background-clip: text;
@@ -45,4 +92,102 @@ body {
     rgba(134, 85, 246, 0.08),
     transparent 70%
   );
+}
+
+/* ========================= */
+/* 🔥 STITCH ADVANCED GLOW   */
+/* ========================= */
+
+/* SVG wave neon */
+.focus-wave {
+  stroke-dasharray: 1000;
+  filter: drop-shadow(0 0 10px rgba(134, 85, 246, 0.9));
+}
+
+/* Identity ring glow */
+.evolution-ring {
+  filter: drop-shadow(0 0 18px rgba(45, 226, 142, 0.6));
+}
+
+/* Card inner glow */
+.card-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(134, 85, 246, 0.1), transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.glass-card:hover .card-glow {
+  opacity: 1;
+}
+
+/* ========================= */
+/* 🔥 STITCH MANIFESTO STYLES */
+/* ========================= */
+
+.nebula {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  background: radial-gradient(
+    circle,
+    rgba(140, 37, 244, 0.15) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Scroll snap */
+.section-snap {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+.snap-container {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.snap-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Glass button */
+.glass-btn {
+  background: rgba(140, 37, 244, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(140, 37, 244, 0.3);
+  transition: all 0.4s ease;
+}
+
+.glass-btn:hover {
+  background: rgba(140, 37, 244, 0.25);
+  border: 1px solid rgba(140, 37, 244, 0.7);
+  box-shadow: 0 0 35px rgba(140, 37, 244, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Glow line */
+.glow-path {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(140, 37, 244, 0.6),
+    transparent
+  );
+  height: 1px;
+  width: 100%;
+}
+
+/* Text glow */
+.text-glow {
+  text-shadow: 0 0 25px rgba(140, 37, 244, 0.35);
 }
